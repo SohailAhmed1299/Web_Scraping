@@ -46,6 +46,53 @@ Finally, save the data in an Excel file named "Amazon_product.xlsx".
 
 # Overall Code
 
-![OVC](https://github.com/SohailAhmed1299/Web_Scraping/assets/90980952/82863d04-22ed-4c66-8177-0a95cba56e4e)
+1. Import the required libraries: BeautifulSoup from bs4, openpyxl, and os.
+
+2. Get the current working directory using os.getcwd().
+
+3. Check if the HTML file named "Amazon.in _ gardening 7.html" exists in the current directory.
+
+4. Read the HTML content from the file and parse it using BeautifulSoup.
+
+5. Find all div elements with the class "s-card-container s-overflow-hidden aok-relative puis-wide-grid-style puis-wide-grid-style-t2 puis-expand-height puis-include-content-margin puis puis-vnjufzhntlqm11zjo2xc51q7r1 s-latency-cf-section s-card-border".
+
+6. If no div elements are found, print "No data found. Check if the HTML structure or class names have changed."
+
+![OV 1](https://github.com/SohailAhmed1299/Web_Scraping/assets/90980952/b0bc993b-fc6e-44dc-87cb-86ab3ab52e01)
+
+
+7. Prepare lists to store product information: product_names, product_prices, product_reviews, product_users, and previous_monthly_records.
+
+8. Loop through each div element and extract the following information:
+   Product Name: Find the span element with class "a-size-base-plus a-color-base a-text-normal".
+   Product Price: Find the span element with class "a-price-whole" and then find the nested span with class "a-offscreen" to get the price value.
+   Product Reviews: Find the span element with class "a-icon-alt" to get the review text.
+
+9. Users: Find the span element with class "a-size-base s-underline-text" to get the user text.
+   Previous Monthly Record: Find the span element with class "a-size-base a-color-secondary" to get the previous monthly record text.
+
+![OV2](https://github.com/SohailAhmed1299/Web_Scraping/assets/90980952/3422e8ef-af06-4b43-b7f0-3b2ccdece60d)
+
+10. Load the existing Excel file named "Amazon_product.xlsx" if it exists, else create a new workbook.
+
+11. Select the active sheet in the workbook.
+
+12. Get the row count of the sheet to determine the next empty row for appending data.
+
+13. If the sheet is empty, add headers: "Product Name", "Product Price", "Product Reviews", "Users", and "Previous Monthly Record".
+
+14. Write the data to the sheet using a for loop and zip function to combine data from the lists.
+
+15. Save the Excel file.
+
+16. If any error occurs during the process, print the error message. Otherwise, print "Data has been extracted and appended to 'Amazon_product.xlsx'."
+
+![OV3](https://github.com/SohailAhmed1299/Web_Scraping/assets/90980952/edfbd475-dd7d-4938-b316-dd9ebdbcce0f)
+
+
+# Output
+
+![Capture](https://github.com/SohailAhmed1299/Web_Scraping/assets/90980952/3802a9da-aa96-458e-80e8-58074f29ec0b)
+
 
 
